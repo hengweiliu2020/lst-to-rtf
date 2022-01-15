@@ -1,0 +1,1143 @@
+1                               The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to HENGRUI USA, Site 70285548.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.11 seconds
+      cpu time            0.09 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is C:\yang2\autoexec.sas.
+
+NOTE: Libref ADAM was successfully assigned as follows: 
+2                               The SAS System   18:15 Friday, January 14, 2022
+
+      Engine:        V9 
+      Physical Name: C:\yang2
+
+NOTE: There were 3 observations read from the data set SASHELP.VEXTFL.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.TEMP has 1 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+3                               The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: There were 1 observations read from the data set WORK.TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          
+3          data adsl; set adam.adsl;
+4          if trt01p='Placebo' then trt='trt1';
+5          else if trt01p='Active_low' then trt='trt2';
+6          else if trt01p='Active_high' then trt='trt3';
+7          run;
+
+NOTE: There were 16 observations read from the data set ADAM.ADSL.
+NOTE: The data set WORK.ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+4                               The SAS System   18:15 Friday, January 14, 2022
+
+
+8          
+9          %bign(classvar=trt);
+
+NOTE: There were 16 observations read from the data set WORK.ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+10         %category_stat(byvarn=, byvar=, tagn=1, tag=Any Metastatic Disease,
+10       ! category=Y#N, catlabel=Yes#No, indata=adsl, invar=metafl,
+5                               The SAS System   18:15 Friday, January 14, 2022
+
+11                       classvar=trt, outdata=p1, percent=Y, where=, missing=,
+11       !  indent=Y, indent2=N, countby=distinct usubjid);
+
+NOTE: There were 16 observations read from the data set WORK.ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 16 observations read from the data set WORK._ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+6                               The SAS System   18:15 Friday, January 14, 2022
+
+      
+
+NOTE: Table WORK.OUT1 created, with 6 rows and 3 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.OUT1.
+NOTE: The data set WORK.OUT1 has 6 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.OUT1.
+NOTE: The data set WORK.OUT_METAFL has 2 observations and 5 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+7                               The SAS System   18:15 Friday, January 14, 2022
+
+      
+
+
+NOTE: The data set WORK.M1 has 5 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 5 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+8                               The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: The data set WORK.M2 has 9 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.OUT_METAFL.
+NOTE: The data set WORK.OUT_METAFL has 2 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+9                               The SAS System   18:15 Friday, January 14, 2022
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Var trt1 exists in out_metafl
+
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt2 exists in out_metafl
+NOTE: Var trt3 exists in out_metafl
+10                              The SAS System   18:15 Friday, January 14, 2022
+
+
+NOTE: There were 2 observations read from the data set WORK.OUT_METAFL.
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+11                              The SAS System   18:15 Friday, January 14, 2022
+
+      
+
+12         
+13         %onelevel(tagn=2, tag=Location of Metastatic Disease, indata=adsl,
+13       ! outdata=p2, classvar=trt, level1=metaloc, percent=Y,
+WARNING: Apparent symbolic reference WHERE not resolved.
+14                    where=%str(metaloc>' '), indent=Y, indent2=N,
+14       ! wheref=&where);
+
+NOTE: There were 12 observations read from the data set WORK.ADSL.
+      WHERE metaloc>' ';
+NOTE: The data set WORK._ADSL has 12 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.LEV1 created, with 8 rows and 3 columns.
+12                              The SAS System   18:15 Friday, January 14, 2022
+
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 8 observations read from the data set WORK.LEV1.
+NOTE: The data set WORK.TLEV1 has 3 observations and 5 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 3 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+13                              The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 3 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt1 exists in tlev1
+NOTE: Var trt2 exists in tlev1
+NOTE: Var trt3 exists in tlev1
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+14                              The SAS System   18:15 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.FRAME created, with 3 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M1 has 11 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 11 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+15                              The SAS System   18:15 Friday, January 14, 2022
+
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M2 has 1 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+16                              The SAS System   18:15 Friday, January 14, 2022
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.FRAME has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: There were 3 observations read from the data set WORK.FRAME.
+17                              The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: The data set WORK.P2 has 3 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+WARNING: Apparent symbolic reference WHERE not resolved.
+15         
+16         %onelevel(tagn=2, tag=Location of Metastatic Disease, indata=adsl,
+16       ! outdata=p3, classvar=trt, level1=specify, percent=Y,
+17                    where=%str(specify>' '), indent=Y, indent2=Y,
+17       ! wheref=&where);
+
+NOTE: There were 2 observations read from the data set WORK.ADSL.
+      WHERE specify>' ';
+18                              The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: The data set WORK._ADSL has 2 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.LEV1 created, with 2 rows and 3 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.LEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+19                              The SAS System   18:15 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Var trt1 exists in tlev1
+NOTE: Var trt2 not exists in tlev1
+NOTE: Var trt3 exists in tlev1
+
+20                              The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+21                              The SAS System   18:15 Friday, January 14, 2022
+
+NOTE: Table WORK.FRAME created, with 1 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M1 has 11 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 11 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+22                              The SAS System   18:15 Friday, January 14, 2022
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M2 has 1 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+23                              The SAS System   18:15 Friday, January 14, 2022
+
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.FRAME has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: There were 1 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.P3 has 1 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+24                              The SAS System   18:15 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+18         
+19         
+20         data final; set p1 p2 p3;
+21         if indent='Y' then catlabel=' '||catlabel;
+22         if indent2='Y' then catlabel='  '||catlabel;
+23         
+24         %let trt0=;
+25         %let trt1=Placebo^(N=&bign1);
+26         %let trt2=Low Dose^(N=&bign2);
+27         %let trt3=High Dose^(N=&bign3);
+28         
+29         %title_foot2(txtfile=&txtfile, tabno=14.5.1);
+The SAS System
+
+MPRINT(TITLE_FOOT2):   symbolgen orientation=landscape ls=132 ps=52;
+MLOGIC(TITLE_FOOT2):  %GLOBAL  TL1 TL2 HLINE
+
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.FINAL has 6 observations and 16 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data _null_;
+MPRINT(TITLE_FOOT2):   set sashelp.vextfl;
+MPRINT(TITLE_FOOT2):   if (substr(fileref,1,3)='_LN' or substr (fileref,1,3)='#LN' or substr(fileref,1,3)='SYS') and 
+index(upcase(xpath),'.SAS')>0 then do;
+MPRINT(TITLE_FOOT2):   call symput("pgmname",trim(scan(xpath,-1,'\')));
+MPRINT(TITLE_FOOT2):   call symput('pgm',scan(trim(scan(xpath,-1,'\')),1, '.'));
+MPRINT(TITLE_FOOT2):   stop;
+MPRINT(TITLE_FOOT2):   end;
+
+NOTE: There were 3 observations read from the data set SASHELP.VEXTFL.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data spec;
+MPRINT(TITLE_FOOT2):   company="Hengrui USA";
+SYMBOLGEN:  Macro variable PGMNAME resolves to t2.sas
+MPRINT(TITLE_FOOT2):   pgmname="Program Name: t2.sas";
+SYMBOLGEN:  Macro variable PROTOCOL resolves to compound_YYYYY
+MPRINT(TITLE_FOOT2):   protocol="Protocol No.: compound_YYYYY";
+MPRINT(TITLE_FOOT2):   pagenum='Page#';
+MPRINT(TITLE_FOOT2):   len1=132-length(company)-length(pagenum);
+MPRINT(TITLE_FOOT2):   len2=132-length(protocol);
+MPRINT(TITLE_FOOT2):   call symput('len1', put(len1, best.));
+MPRINT(TITLE_FOOT2):   call symput('len2', put(len2, best.));
+MPRINT(TITLE_FOOT2):   run;
+
+NOTE: The data set WORK.SPEC has 1 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data spec;
+SYMBOLGEN:  Macro variable LEN1 resolves to          116
+SYMBOLGEN:  Macro variable LEN2 resolves to          104
+MPRINT(TITLE_FOOT2):   length space1 $ 116. space2 $ 104. ;
+The SAS System
+
+MPRINT(TITLE_FOOT2):   set spec;
+MPRINT(TITLE_FOOT2):   space1=repeat(' ',len1);
+MPRINT(TITLE_FOOT2):   space2=repeat(' ',len2);
+MPRINT(TITLE_FOOT2):   hline=repeat('_',132);
+MPRINT(TITLE_FOOT2):   t1=company||space1||pagenum;
+MPRINT(TITLE_FOOT2):   t2=protocol||space2;
+MPRINT(TITLE_FOOT2):   call symput('tl1', trim(left(t1)));
+MPRINT(TITLE_FOOT2):   call symput('tl2', trim(left(t2)));
+MPRINT(TITLE_FOOT2):   call symput('hline', trim(left(hline)));
+MPRINT(TITLE_FOOT2):   run;
+
+NOTE: There were 1 observations read from the data set WORK.SPEC.
+NOTE: The data set WORK.SPEC has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data titlef;
+SYMBOLGEN:  Macro variable TXTFILE resolves to C:\yang2\title.txt
+MPRINT(TITLE_FOOT2):   infile "C:\yang2\title.txt" print lrecl=132 pad missover end=eof;
+MPRINT(TITLE_FOOT2):   input text $ 1-132;
+MPRINT(TITLE_FOOT2):   y=index(upcase(substr(text,1,5)),'TABLE') + index(upcase(substr(text,1,7)),'LISTING') + 
+index(upcase(substr(text,1,6)),'FIGURE');
+MPRINT(TITLE_FOOT2):   if substr(upcase(text),1,4)='NOTE' then foot=2;
+MPRINT(TITLE_FOOT2):   if y>0 then num=compress(scan(text,2,' '),':');
+
+NOTE: The infile "C:\yang2\title.txt" is:
+      Filename=C:\yang2\title.txt,
+      RECFM=P,LRECL=132,File Size (bytes)=91,
+      Last Modified=14Jan2022:12:50:08,
+      Create Time=14Jan2022:14:20:43
+
+NOTE: 4 records were read from the infile "C:\yang2\title.txt".
+      The minimum record length was 0.
+      The maximum record length was 42.
+NOTE: The data set WORK.TITLEF has 4 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data titlef;
+MPRINT(TITLE_FOOT2):   set titlef;
+MPRINT(TITLE_FOOT2):   retain temp1 ;
+MPRINT(TITLE_FOOT2):   if num>' ' then temp1= num;
+MPRINT(TITLE_FOOT2):   else num=temp1;
+MPRINT(TITLE_FOOT2):   if text=' ' then delete;
+
+NOTE: There were 4 observations read from the data set WORK.TITLEF.
+The SAS System
+
+NOTE: The data set WORK.TITLEF has 2 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   proc sort data=titlef;
+MPRINT(TITLE_FOOT2):   by num;
+NOTE: There were 2 observations read from the data set WORK.TITLEF.
+NOTE: The data set WORK.TITLEF has 2 observations and 5 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data titlef;
+MPRINT(TITLE_FOOT2):   set titlef;
+MPRINT(TITLE_FOOT2):   by num;
+MPRINT(TITLE_FOOT2):   retain temp2;
+MPRINT(TITLE_FOOT2):   if first.num then temp2=.;
+MPRINT(TITLE_FOOT2):   if foot>0 then temp2=foot;
+MPRINT(TITLE_FOOT2):   else foot=temp2;
+MPRINT(TITLE_FOOT2):   if foot<.z then foot=1;
+
+NOTE: There were 2 observations read from the data set WORK.TITLEF.
+NOTE: The data set WORK.TITLEF has 2 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data titlef;
+MPRINT(TITLE_FOOT2):   set titlef;
+SYMBOLGEN:  Macro variable TABNO resolves to 14.5.1
+MPRINT(TITLE_FOOT2):   where num="14.5.1";
+MPRINT(TITLE_FOOT2):   lentext=length(text);
+MPRINT(TITLE_FOOT2):   len1=int((132-lentext)/2);
+MPRINT(TITLE_FOOT2):   len2=132-lentext-len1;
+MPRINT(TITLE_FOOT2):   text=repeat(' ',len1)||text||repeat(' ',len2);
+MPRINT(TITLE_FOOT2):   run;
+
+NOTE: There were 2 observations read from the data set WORK.TITLEF.
+      WHERE num='14.5.1';
+NOTE: The data set WORK.TITLEF has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data _null_;
+The SAS System
+
+MPRINT(TITLE_FOOT2):   set titlef end=eof;
+MPRINT(TITLE_FOOT2):   where foot=1;
+MPRINT(TITLE_FOOT2):   i+1;
+MPRINT(TITLE_FOOT2):   call symput(compress("tle"||put(i, best.)), text);
+MPRINT(TITLE_FOOT2):   if eof then call symput('numtle', trim(left(put(_n_, best.))));
+MPRINT(TITLE_FOOT2):   run;
+
+NOTE: There were 1 observations read from the data set WORK.TITLEF.
+      WHERE foot=1;
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable TL1 resolves to Hengrui USA                                                                              
+                                                  Page#
+MPRINT(TITLE_FOOT2):   title1 "Hengrui USA                                                                                          
+                          Page#";
+SYMBOLGEN:  Macro variable TL2 resolves to Protocol No.: compound_YYYYY
+MPRINT(TITLE_FOOT2):   title2 "Protocol No.: compound_YYYYY";
+SYMBOLGEN:  Macro variable NUMTLE resolves to 1
+MLOGIC(TITLE_FOOT2):  %DO loop beginning; index variable K; start value is 1; stop value is 1; by value is 1.  
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable TLE1 resolves to                                               Table 14.5.1 Summary of Metastatic 
+            Disease                                            
+MPRINT(TITLE_FOOT2):   title3 "                                              Table 14.5.1 Summary of Metastatic Disease             
+                               ";
+MLOGIC(TITLE_FOOT2):  %DO loop index variable K is now 2; loop will not iterate again.
+SYMBOLGEN:  Macro variable NUMTLE resolves to 1
+SYMBOLGEN:  Macro variable HLINE resolves to 
+            ________________________________________________________________________________________________________________________
+            _____________
+MPRINT(TITLE_FOOT2):   title4 
+"___________________________________________________________________________________________________________________________________
+__";
+MPRINT(TITLE_FOOT2):   run;
+MPRINT(TITLE_FOOT2):   proc sql noprint;
+MPRINT(TITLE_FOOT2):   select count(*) into :footobs from titlef where foot=2;
+SYMBOLGEN:  Macro variable FOOTOBS resolves to        1
+MLOGIC(TITLE_FOOT2):  %IF condition &footobs=0 is FALSE
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT2):   data _null_;
+MPRINT(TITLE_FOOT2):   set titlef end=eof;
+MPRINT(TITLE_FOOT2):   where foot=2;
+The SAS System
+
+MPRINT(TITLE_FOOT2):   i+1;
+MPRINT(TITLE_FOOT2):   call symput(compress("fot"||put(i, best.)), trim(left(text)));
+MPRINT(TITLE_FOOT2):   if eof then call symput('numfot', trim(left(put(_n_, best.))));
+MPRINT(TITLE_FOOT2):   run;
+
+NOTE: There were 1 observations read from the data set WORK.TITLEF.
+      WHERE foot=2;
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable HLINE resolves to 
+            ________________________________________________________________________________________________________________________
+            _____________
+MPRINT(TITLE_FOOT2):   footnote1 
+"___________________________________________________________________________________________________________________________________
+__";
+SYMBOLGEN:  Macro variable NUMFOT resolves to 1
+MLOGIC(TITLE_FOOT2):  %DO loop beginning; index variable I; start value is 1; stop value is 1; by value is 1.  
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable FOT1 resolves to Note: This is based on the dataset ADSL.
+MPRINT(TITLE_FOOT2):   footnote2 "Note: This is based on the dataset ADSL.";
+MLOGIC(TITLE_FOOT2):  %DO loop index variable I is now 2; loop will not iterate again.
+SYMBOLGEN:  Macro variable NUMFOT resolves to 1
+SYMBOLGEN:  Macro variable LASTFOOT resolves to Program Source: t2.sas                                                              
+                                Executed: (Draft) 2022-01-14
+MPRINT(TITLE_FOOT2):   footnote3 "Program Source: t2.sas                                                                            
+      Executed: (Draft) 2022-01-14";
+MLOGIC(TITLE_FOOT2):  Ending execution.
+30         %report(indata=final, outdir=&outdir);
+MLOGIC:  Beginning compilation of REPORT using the autocall file C:\yang2\report.sas.
+MLOGIC:  Ending compilation of REPORT.
+MLOGIC(REPORT):  Beginning execution.
+MLOGIC(REPORT):  This macro was compiled from the autocall file C:\yang2\report.sas
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+MLOGIC(REPORT):  Parameter INDATA has value final
+MLOGIC(REPORT):  Parameter OUTDIR has value C:\yang2
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+MPRINT(REPORT):   libname outd "C:\yang2";
+NOTE: Libref OUTD refers to the same physical library as ADAM.
+NOTE: Libref OUTD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\yang2
+SYMBOLGEN:  Macro variable PGM resolves to t2
+MPRINT(REPORT):   ods document name=outd.t2(write);
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+SYMBOLGEN:  Macro variable PGM resolves to t2
+The SAS System
+
+MPRINT(REPORT):   ods listing file="C:\yang2\t2.lst";
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MPRINT(REPORT):   proc report data=final headline headskip spacing=1 missing split='^';
+SYMBOLGEN:  Macro variable VAL1 resolves to trt1
+SYMBOLGEN:  Macro variable VAL2 resolves to trt2
+SYMBOLGEN:  Macro variable VAL3 resolves to trt3
+MPRINT(REPORT):   columns tagn tag catlabel trt1 ('Active' '__' trt2 trt3);
+MPRINT(REPORT):   define tagn/group noprint order;
+MPRINT(REPORT):   define tag/group noprint order;
+SYMBOLGEN:  Macro variable TOT resolves to 3
+SYMBOLGEN:  Macro variable TOT resolves to 3
+MPRINT(REPORT):   define catlabel/width=54 " " flow spacing=0;
+SYMBOLGEN:  Macro variable TOT resolves to 3
+MLOGIC(REPORT):  %DO loop beginning; index variable K; start value is 1; stop value is 3; by value is 1.  
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable VAL1 resolves to trt1
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable TRT1 resolves to Placebo^(N=4)
+MPRINT(REPORT):   define trt1/width=25 right "Placebo^(N=4)";
+MLOGIC(REPORT):  %DO loop index variable K is now 2; loop will iterate again.
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 2
+SYMBOLGEN:  Macro variable VAL2 resolves to trt2
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 2
+SYMBOLGEN:  Macro variable TRT2 resolves to Low Dose^(N=5)
+MPRINT(REPORT):   define trt2/width=25 right "Low Dose^(N=5)";
+MLOGIC(REPORT):  %DO loop index variable K is now 3; loop will iterate again.
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 3
+SYMBOLGEN:  Macro variable VAL3 resolves to trt3
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 3
+SYMBOLGEN:  Macro variable TRT3 resolves to High Dose^(N=1)
+MPRINT(REPORT):   define trt3/width=25 right "High Dose^(N=1)";
+MLOGIC(REPORT):  %DO loop index variable K is now 4; loop will not iterate again.
+MPRINT(REPORT):   compute before tag;
+MPRINT(REPORT):   line @1 tag $100.;
+MPRINT(REPORT):   endcomp;
+MPRINT(REPORT):   break after tagn/skip;
+MPRINT(REPORT):   run;
+
+NOTE: There were 6 observations read from the data set WORK.FINAL.
+NOTE: The PROCEDURE REPORT printed page 1.
+NOTE: PROCEDURE REPORT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+The SAS System
+
+
+MPRINT(REPORT):   ods listing close;
+MPRINT(REPORT):  ;
+MPRINT(REPORT):   *-- count pages ;
+MLOGIC(REPORT):  Beginning compilation of MPAGENUM2 using the autocall file C:\yang2\mpagenum2.sas.
+MLOGIC(REPORT):  Ending compilation of MPAGENUM2.
+MLOGIC(MPAGENUM2):  Beginning execution.
+MLOGIC(MPAGENUM2):  This macro was compiled from the autocall file C:\yang2\mpagenum2.sas
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+SYMBOLGEN:  Macro variable PGM resolves to t2
+MLOGIC(MPAGENUM2):  Parameter INPUT has value C:\yang2\t2.lst
+MLOGIC(MPAGENUM2):  Parameter MLS has value 132
+MLOGIC(MPAGENUM2):  Parameter POINTER has value Page#
+SYMBOLGEN:  Macro variable INPUT resolves to C:\yang2\t2.lst
+MPRINT(MPAGENUM2):   filename myfile "C:\yang2\t2.lst";
+MPRINT(MPAGENUM2):   options mprint mlogic symbolgen;
+MPRINT(MPAGENUM2):   data _null_;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   infile myfile print lrecl=132 pad missover end=eof;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   input text $ 1-132;
+MPRINT(MPAGENUM2):   retain totpage 0;
+SYMBOLGEN:  Macro variable POINTER resolves to Page#
+MPRINT(MPAGENUM2):   if index(text,"Page#") then totpage+1;
+MPRINT(MPAGENUM2):   ***** if eof then call symput('totpage',compress(totpage));
+MPRINT(MPAGENUM2):   if eof then call symput('totpage',compress(put(totpage,best.)));
+MPRINT(MPAGENUM2):   call symput("date",put(today(),mmddyy10.));
+MPRINT(MPAGENUM2):   run;
+
+NOTE: The infile MYFILE is:
+      Filename=C:\yang2\t2.lst,
+      RECFM=P,LRECL=132,File Size (bytes)=2972,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:14:33:20
+
+NOTE: 52 records were read from the infile MYFILE.
+      The minimum record length was 0.
+      The maximum record length was 132.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MPAGENUM2):   data _null_;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   infile myfile print lrecl=132 pad missover sharebuffers;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   file "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME" print 
+ls=132 notitles;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+The SAS System
+
+MPRINT(MPAGENUM2):   length text $132;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   input text $char132.;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   put text $132.;
+MPRINT(MPAGENUM2):   run;
+
+NOTE: The infile MYFILE is:
+      Filename=C:\yang2\t2.lst,
+      RECFM=P,LRECL=132,File Size (bytes)=2972,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:14:33:20
+
+NOTE: The file "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME" is:
+      Filename=C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME,
+      RECFM=P,LRECL=132,File Size (bytes)=0,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:18:15:46
+
+NOTE: 52 records were read from the infile MYFILE.
+      The minimum record length was 0.
+      The maximum record length was 132.
+NOTE: 29 records were written to the file "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary 
+      Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME".
+      The minimum record length was 132.
+      The maximum record length was 132.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MPAGENUM2):   data _null_;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   infile "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME" print 
+lrecl=132 pad missover sharebuffers;
+SYMBOLGEN:  Macro variable INPUT resolves to C:\yang2\t2.lst
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   file "C:\yang2\t2.lst" print ls=132 notitles;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   length text $132;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   input text $char132.;
+MPRINT(MPAGENUM2):   retain page 1;
+SYMBOLGEN:  Macro variable POINTER resolves to Page#
+MPRINT(MPAGENUM2):   if index(text,"Page#") then do;
+SYMBOLGEN:  Macro variable TOTPAGE resolves to 1
+MPRINT(MPAGENUM2):   pageof=trim("Page "|| compress(trim(put(page, best.)) ) ||" of "||trim(put("1",$10.)));
+MPRINT(MPAGENUM2):   a=(length(pageof));
+MPRINT(MPAGENUM2):   page+1;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+The SAS System
+
+MPRINT(MPAGENUM2):   substr(text,132-a+1) = pageof;
+MPRINT(MPAGENUM2):   end;
+SYMBOLGEN:  Macro variable MLS resolves to 132
+MPRINT(MPAGENUM2):   put text $132.;
+MPRINT(MPAGENUM2):   run;
+
+NOTE: The infile "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME" is:
+      Filename=C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME,
+      RECFM=P,LRECL=132,File Size (bytes)=2744,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:18:15:46
+
+NOTE: The file "C:\yang2\t2.lst" is:
+      Filename=C:\yang2\t2.lst,
+      RECFM=P,LRECL=132,File Size (bytes)=0,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:14:33:20
+
+NOTE: 52 records were read from the infile "C:\Users\HENGWE~1\AppData\Local\Temp\SAS Temporary 
+      Files\_TD10276_LAPTOP-DFGRRK23_\DELETEME".
+      The minimum record length was 0.
+      The maximum record length was 132.
+NOTE: 29 records were written to the file "C:\yang2\t2.lst".
+      The minimum record length was 132.
+      The maximum record length was 132.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(MPAGENUM2):  Ending execution.
+MPRINT(REPORT):  ;
+MPRINT(REPORT):   run;
+MPRINT(REPORT):   ods document close;
+MLOGIC(REPORT):  Ending execution.
+31         %lst2rtf(
+MLOGIC:  Beginning compilation of LST2RTF using the autocall file C:\yang2\lst2rtf.sas.
+MLOGIC:  Ending compilation of LST2RTF.
+MLOGIC(LST2RTF):  Beginning execution.
+MLOGIC(LST2RTF):  This macro was compiled from the autocall file C:\yang2\lst2rtf.sas
+32           _lstfn=&outdir\&pgm..lst
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+SYMBOLGEN:  Macro variable PGM resolves to t2
+33          ,_rtffn=&outdir\&pgm..rtf);
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang2
+SYMBOLGEN:  Macro variable PGM resolves to t2
+MLOGIC(LST2RTF):  Parameter _LSTFN has value C:\yang2\t2.lst
+MLOGIC(LST2RTF):  Parameter _RTFFN has value C:\yang2\t2.rtf
+MLOGIC(LST2RTF):  Parameter _PGWH has value 15840
+MLOGIC(LST2RTF):  Parameter _PGHT has value 12240
+The SAS System
+
+MLOGIC(LST2RTF):  Parameter _MGNS has value 1440
+MLOGIC(LST2RTF):  Parameter _LSPE has value \landscape
+MLOGIC(LST2RTF):  Parameter _FNSZ has value 7
+MPRINT(LST2RTF):   options errors=0;
+MPRINT(LST2RTF):   data _null_;
+SYMBOLGEN:  Macro variable _LSTFN resolves to C:\yang2\t2.lst
+MPRINT(LST2RTF):   infile "C:\yang2\t2.lst" end=eof;
+MPRINT(LST2RTF):   length _lst $150;
+MPRINT(LST2RTF):   input;
+SYMBOLGEN:  Macro variable _RTFFN resolves to C:\yang2\t2.rtf
+MPRINT(LST2RTF):   file "C:\yang2\t2.rtf";
+MPRINT(LST2RTF):   if _n_=1 then do;
+SYMBOLGEN:  Macro variable _PGWH resolves to 15840
+SYMBOLGEN:  Macro variable _PGHT resolves to 12240
+SYMBOLGEN:  Macro variable _MGNS resolves to 1440
+SYMBOLGEN:  Macro variable _MGNS resolves to 1440
+SYMBOLGEN:  Macro variable _MGNS resolves to 1440
+SYMBOLGEN:  Macro variable _MGNS resolves to 1440
+SYMBOLGEN:  Macro variable _LSPE resolves to \landscape
+SYMBOLGEN:  Some characters in the above value which were subject to macro quoting have been unquoted for printing.
+SYMBOLGEN:  Macro variable _FNSZ resolves to 7
+SYMBOLGEN:  Macro variable _FNSZ resolves to 7
+MPRINT(LST2RTF):   put '{\rtf1\ansi\ansicpg1252\deff0\deflang1033' / '{\fonttbl{\f0\fmodern\fprq1\fcharset0 Courier New;}}' / 
+'{\colortbl \red0\green0\blue0;}' / "\paperw15840\paperh12240\margl1440\margr1440" / "\margt1440\margb1440\landscape" / 
+"\viewkind4\uc1\pard\ql\fi0\li0\ri0\sb0\sa0\sl-175" / "\cf0\f0\fs14 \hich\af2\dbch\af31505\loch\f2 " _infile_;
+MPRINT(LST2RTF):   end;
+MPRINT(LST2RTF):   else do;
+MPRINT(LST2RTF):   if substr(_infile_,1,1)=byte(12) then do;
+MPRINT(LST2RTF):   _lst='\page '||substr(_infile_,2);
+MPRINT(LST2RTF):   put _lst;
+MPRINT(LST2RTF):   end;
+MPRINT(LST2RTF):   else if ^eof then put '\par \hich\af2\dbch\af31505\loch\f2 ' _infile_;
+MPRINT(LST2RTF):   else if eof then put '\par \hich\af2\dbch\af31505\loch\f2 ' _infile_ '}';
+MPRINT(LST2RTF):   end;
+MPRINT(LST2RTF):   run;
+
+NOTE: The infile "C:\yang2\t2.lst" is:
+      Filename=C:\yang2\t2.lst,
+      RECFM=V,LRECL=32767,File Size (bytes)=2744,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:14:33:20
+
+NOTE: The file "C:\yang2\t2.rtf" is:
+      Filename=C:\yang2\t2.rtf,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=14Jan2022:18:15:46,
+      Create Time=14Jan2022:14:37:58
+
+NOTE: Limit set by ERRORS= option reached.  Further errors of this type will not be printed.
+NOTE: 52 records were read from the infile "C:\yang2\t2.lst".
+The SAS System
+
+      The minimum record length was 0.
+      The maximum record length was 132.
+NOTE: 58 records were written to the file "C:\yang2\t2.rtf".
+      The minimum record length was 30.
+      The maximum record length was 176.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(LST2RTF):   options errors=20;
+MLOGIC(LST2RTF):  Ending execution.
+34         
+35         
+36         
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.56 seconds
+      cpu time            0.37 seconds
+      
